@@ -1,27 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  :root {
+    --background: 220 30% 97%; /* Light pastel blue background */
+    --foreground: 220 25% 20%; /* Dark text for contrast */
+    --card: 220 30% 99%; /* Slightly lighter card background */
+    --card-foreground: 220 25% 20%;
+    --popover: 220 30% 98%;
+    --popover-foreground: 220 25% 20%;
+    --primary: 180 50% 75%; /* Soft pastel teal */
+    --primary-foreground: 220 25% 20%;
+    --secondary: 340 50% 85%; /* Soft pastel pink */
+    --secondary-foreground: 220 25% 20%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 25% 40%;
+    --accent: 280 50% 85%; /* Soft pastel purple */
+    --accent-foreground: 220 25% 20%;
+    --destructive: 0 70% 85%;
+    --destructive-foreground: 0 70% 30%;
+    --border: 220 30% 92%;
+    --input: 220 30% 96%;
+    --ring: 180 50% 75%;
+    --radius: 1rem; /* Rounder corners */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 30% 97%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(180 50% 75%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(180 50% 70%);
 }
