@@ -16,7 +16,7 @@ export function About() {
           <h2 className="font-serif text-4xl font-bold tracking-tight mb-6">Our Mission</h2>
           <p className="font-sans text-lg text-muted-foreground max-w-3xl mx-auto">
             To level the digital playing field, enabling smaller law firms to compete effectively online without breaking
-            the bank. We understand the digital challenges faced by smaller law firms in today's competitive landscape,
+            the bank. We understand the digital challenges faced by smaller law firms in today&apos;s competitive landscape,
             where online visibility can make a significant difference in attracting and retaining clients.
           </p>
         </motion.div>
